@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import rospy
 from geometry_msgs.msg import Twist
-PI = 3.1415926535897
+import math
+
 
 def square_openloop():
     # Starts a new node
@@ -38,8 +39,7 @@ def square_openloop():
         vel_msg.linear.x = 0.
         vel_msg.angular.z = 0.2
         angular_speed = vel_msg.angular.z
-        relative_angle = angle*PI/180
-        #velocity_publisher.publish(vel_msg)
+        relative_angle = angle*math.pi/180
         t0 = rospy.Time.now().to_sec()
         current_angle = 0
         while(current_angle < relative_angle):
@@ -47,8 +47,6 @@ def square_openloop():
             t1 = rospy.Time.now().to_sec()
             current_angle = angular_speed*(t1-t0)
 
-
-        #Forcing our robot to stop
         vel_msg.angular.z = 0
         velocity_publisher.publish(vel_msg)
         
@@ -57,7 +55,6 @@ def square_openloop():
         move_forward(2, vel_msg)
         vel_msg.linear.x = 0
         turn_left(90, vel_msg)
-        #Setting the current time for distance calculus
         
     
 
