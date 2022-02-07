@@ -9,7 +9,7 @@ rosrun turtlesim turtlesim_node
 Then run the circle script with
 
 rosrun assignment2_ws circle.py
-![circle.py](~/AuE8230Spring22_BradSanders/catkin_ws/src/assignment2_turtlesim/src/docs/images/circle_trajectory.png)
+![circle.py](/wsl$/Ubuntu-20.04/home/bsande6/AuE8230Spring22_BradSanders/catkin_ws/src/assignment2_turtlesim/src/docs/images/circle_trajectory.png)
 
 Part 2:
 
